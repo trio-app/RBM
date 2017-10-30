@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class U_mgroup extends CI_Model {
+class U_mcategory extends CI_Model {
         
     function updateDT($DTrows){
         $this->load->database();

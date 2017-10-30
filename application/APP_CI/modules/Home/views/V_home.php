@@ -97,7 +97,7 @@
                                     handler: function(){
                                         Ext.MessageBox.show({
                                            title: 'About',
-                                           msg: '<?php echo app_title(); ?><br/><?php echo app_ver(); ?>',
+                                           msg: '<?php echo app_title(); ?><br/><?php echo app_ver(); ?><br/>Copyright &copy; 2017',
                                            buttons: Ext.MessageBox.OK,
                                            icon: 'info'
                                        });                                        

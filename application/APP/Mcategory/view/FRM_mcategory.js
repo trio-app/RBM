@@ -1,6 +1,6 @@
-Ext.define('RBM.view.FRM_mgroup',{
+Ext.define('RBM.view.FRM_mcategory',{
    extend: 'Ext.form.Panel',
-   alias: 'widget.FRM_mgroup',
+   alias: 'widget.FRM_mcategory',
    frame: false,
    border: 0,
     config: {
@@ -9,7 +9,7 @@ Ext.define('RBM.view.FRM_mgroup',{
     },   
    items: [{
         xtype: 'box',
-        html: '<p style="font-size: 14pt;">Form Master Group</p>',
+        html: '<p style="font-size: 14pt;">Form Master Category</p>',
         },{
         xtype: 'form',
         border: 0,
@@ -26,12 +26,12 @@ Ext.define('RBM.view.FRM_mgroup',{
         },{
             name: 'd_name',
             flex: 1,
-            fieldLabel: 'Group Name',
+            fieldLabel: 'Category Name ',
             allowBlank: false
         },{
             name: 'd_description',
             flex: 1,
-            fieldLabel: 'Group Desc',
+            fieldLabel: 'Category Desc ',
             allowBlank: false
         }]
 }],
