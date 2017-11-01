@@ -14,14 +14,12 @@
                     specialkey: this.searchData
                 },                                        
                 'GRID_mcategory' :{
-                    itemdblclick: this.onRowdblclick
+                    itemdblclick: this.onRowdblclick,
+                    removeitem: this.deleteItem
                 },
                 'FRM_mcategory button[action=add]':{
                     click: this.doSaveform
                 },
-                'GRID_mcategory actioncolumn': {
-                    itemclick: this.deleteItem
-                }
             });
         },
         searchData:function (f,e) {
@@ -45,7 +43,7 @@
                 console.log('edit');
 
         },
-        deleteItem:function (view, cell, rowIndex, colIndex, e, record, row) {
+        deleteItem:function (record) {
             Ext.Msg.confirm('Delete Category', 'Are you sure?', function (button) {
                 if (button == 'yes') {
                     this.doProsesCRUD('delete',record);

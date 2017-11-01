@@ -1,29 +1,29 @@
-    Ext.define('RBM.controller.C_mgroup',{
+    Ext.define('RBM.controller.C_mmaterial',{
         extend: 'Ext.app.Controller',
-        views: ['GRID_mgroup', 'FRM_mgroup'],
-        stores: ['ST_mgroup'],
+        views: ['GRID_mmaterial', 'FRM_mmaterial'],
+        stores: ['ST_mmaterial'],
         refs: [{
-            ref: 'FRM_mgroup',
-            xtype: 'FRM_mgroup',
-            selector: 'FRM_mgroup',
+            ref: 'FRM_mmaterial',
+            xtype: 'FRM_mmaterial',
+            selector: 'FRM_mmaterial',
             autoCreate: true
         }],
         init: function(){
             this.control({
-                'GRID_mgroup > toolbar > textfield[itemId=searchData]': {
+                'GRID_mmaterial > toolbar > textfield[itemId=searchData]': {
                     specialkey: this.searchData
                 },                                        
-                'GRID_mgroup' :{
+                'GRID_mmaterial' :{
                     itemdblclick: this.onRowdblclick,
                     removeitem: this.deleteItem
                 },
-                'FRM_mgroup button[action=add]':{
+                'FRM_mmaterial button[action=add]':{
                     click: this.doSaveform
                 },
             });
         },
         searchData:function (f,e) {
-            var store = this.getST_mgroupStore();//Ext.getStore('STassetlocation');
+            var store = this.getST_mmaterialStore();//Ext.getStore('STassetlocation');
             if (e.getKey() == e.ENTER) {
                 store.remoteFilter = false;
                 store.clearFilter();
@@ -36,40 +36,40 @@
             }
         },
         onRowdblclick: function(me, record, item, index){                            
-                var win = this.getFRM_mgroup();
+                var win = this.getFRM_mmaterial();
                 win.setAction('edit');
                 win.setRecordIndex(index);
                 win.down('form').getForm().setValues(record.getData());
-                console.log('edit');
 
         },
         deleteItem:function (record) {
-            Ext.Msg.confirm('Delete Group', 'Are you sure?', function (button) {
+            Ext.Msg.confirm('Delete UOM', 'Are you sure?', function (button) {
                 if (button == 'yes') {
                     this.doProsesCRUD('delete',record);
+                    //console.log(record.data);
                 }
             }, this);
         },
         doProsesCRUD : function (inAction,record){
-            var win = this.getFRM_mgroup();
-            var store = this.getST_mgroupStore();//Ext.getStore('ScontactStore');
+            var win = this.getFRM_mmaterial();
+            var store = this.getST_mmaterialStore();//Ext.getStore('ScontactStore');
             Ext.Ajax.request({
-                        url: base_url + 'Mgroup/' +  inAction,
+                        url: base_url + 'Mmaterial/' +  inAction,
                         method: 'POST',
                         type:'json',
                         params: JSON.stringify(record.data),
                         success: function(response){
                             switch(inAction) {
                                 case 'delete':
-                                        createAlert('Delete Group', 'Delete Data Success', 'success');
+                                        createAlert('Delete UOM', 'Delete Data Success', 'success');
                                         store.load();
                                     break;
                                 case 'create' :
-                                        createAlert('Insert Group', 'Insert Data Success', 'success');
+                                        createAlert('Insert UOM', 'Insert Data Success', 'success');
                                         store.load();
                                     break;
                                 case 'update' :
-                                        createAlert('Update Group', 'Update Data Success', 'success');
+                                        createAlert('Update UOM', 'Update Data Success', 'success');
                                         store.load();
                                     break;
                             }
@@ -85,14 +85,14 @@
                     });
         },                        
         doSaveform: function(){
-                var win = this.getFRM_mgroup();
-                var store = this.getST_mgroupStore();
+                var win = this.getFRM_mmaterial();
+                var store = this.getST_mmaterialStore();
                 var form = win.down('form');
                 //var values = form.getValues();
                 var values = form.getValues();
                 var record = form.getRecord();
                 var action = win.getAction();
-                var recValue = Ext.create('RBM.model.M_mgroup', values);
+                var recValue = Ext.create('RBM.model.M_mmaterial', values);
                 console.log(action);
 
                 if(action == 'edit'){

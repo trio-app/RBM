@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class R_mcategory extends CI_Model {
+class R_muom extends CI_Model {
         
         function load_default($start,$limit,$filter){
             $dtfilter = json_decode($filter,true);
@@ -11,7 +11,7 @@ class R_mcategory extends CI_Model {
                             ',FALSE);
             $this->db->from('m_data');
             $this->db->where("m_data.d_id <>", 0);
-            $this->db->like('m_data.m_name','Category');
+            $this->db->like('m_data.m_name','UOM');
             $this->db->like('m_data.d_name',$dtfilter['value']);
             $this->db->like('m_data.d_description',$dtfilter['value']);   
             $this->db->limit($limit,$start);
@@ -38,7 +38,7 @@ class R_mcategory extends CI_Model {
                             ',FALSE);
             $this->db->from('m_data');
             $this->db->where('m_data.d_id <>', 0);
-            $this->db->like('m_data.m_name','Category');
+            $this->db->like('m_data.m_name','UOM');
             $this->db->order_by("m_data.d_id","DESC");
             $query = $this->db->get();
                             //return $db->last_query();
@@ -46,5 +46,5 @@ class R_mcategory extends CI_Model {
             
             return json_encode($rows);
             
-        }
+        }        
 }

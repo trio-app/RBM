@@ -92,6 +92,12 @@
                                 text: '&nbsp;',
                                 icon: base_url + 'system/img/gear.ico',
                                 menu : [{
+                                    text: 'Reload Application',
+                                    icon: base_url + 'system/img/refresh.ico',
+                                    handler: function(){
+                                        refresh();
+                                    }                                        
+                                },{
                                     icon: base_url + 'system/img/info.ico',
                                     text : 'About',
                                     handler: function(){
@@ -172,6 +178,15 @@
                                 //server access
                                 {xtype: 'displayfield', fieldLabel: 'Server Access ', value: '<span style="color:green; "><?php echo $this->db->database; ?></span>',margins: '0 5'},
                                 '-','->',
+                                //Refresh Button
+                                {
+                                    text: 'Reload App',
+                                    icon: base_url + 'system/img/refresh.ico',
+                                    iconAlign: 'right',
+                                    handler: function(){
+                                        refresh();
+                                    }
+                                },                                
                                 // logout button
                                 {
                                     text: 'Logout',
@@ -190,6 +205,14 @@
             
             function sysLogout(){
                 Ext.MessageBox.confirm('Confirmation', 'System Logout. Are you sure?', redirect);
+            };
+            
+            function refresh(){
+                Ext.Msg.confirm('Reload Application', 'Are you sure?', function (button) {
+                    if (button == 'yes') {
+                        location.reload()
+                    }
+                }, this);                
             };
 
             function redirect(btn){

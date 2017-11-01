@@ -19,24 +19,6 @@ Ext.define('RBM.view.GRID_mcategory',{
             { xtype: 'rownumberer' },
             { header: 'Group Name', dataIndex: 'd_name', flex: 1 },
             { header: 'Description', dataIndex: 'd_description', flex: 1 },
-            {header: 'Remove',
-                    xtype: 'actioncolumn',
-                    width:80,
-                    align:'center',
-                    action:'cancel',
-                    sortable: false,
-                    items: [{
-                    handler: function(view, cell, rowIndex, colIndex, e, record, row) {
-
-                                      this.addEvents('itemclick');
-                                      this.fireEvent('itemclick',view, cell, rowIndex, colIndex, e, record, row);
-
-
-                                   },
-                        icon: extjs_url + 'resources/css/icons/delete.gif',
-                        tooltip: 'Delete Row'
-                           }]
-                }            
         ];
       this.bbar = Ext.create('Ext.PagingToolbar', {
         store: 'ST_mcategory',
@@ -44,6 +26,27 @@ Ext.define('RBM.view.GRID_mcategory',{
         displayMsg: 'Total Data {0} - {1} of {2}',
         emptyMsg: "No Data Display"
         });
+        this.addEvents('removeitem');
+        this.actions = {
+            removeitem: Ext.create('Ext.Action', {
+                text: 'Delete Record',
+                handler: function () { this.fireEvent('removeitem', this.getSelected()) },
+                scope: this,
+                icon: extjs_url + 'resources/css/icons/delete.gif',
+            })
+        };
+        var contextMenu = Ext.create('Ext.menu.Menu', {
+            items: [
+                this.actions.removeitem
+            ]
+        });
+        this.on({
+            itemcontextmenu: function (view, rec, node, index, e) {
+                e.stopEvent();
+                contextMenu.showAt(e.getXY());
+                return false;
+            }
+        });   
         this.callParent(arguments);
     },
     getSelected: function () {

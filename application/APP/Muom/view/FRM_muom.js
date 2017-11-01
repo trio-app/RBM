@@ -1,6 +1,6 @@
-Ext.define('RBM.view.FRM_mcategory',{
+Ext.define('RBM.view.FRM_muom',{
    extend: 'Ext.form.Panel',
-   alias: 'widget.FRM_mcategory',
+   alias: 'widget.FRM_muom',
    frame: false,
    border: 0,
     config: {
@@ -9,7 +9,7 @@ Ext.define('RBM.view.FRM_mcategory',{
     },   
    items: [{
         xtype: 'box',
-        html: '<p style="font-size: 14pt;">Form Master Category</p>',
+        html: '<p style="font-size: 14pt;">Form Master UOM</p>',
         },{
         xtype: 'form',
         border: 0,
@@ -26,13 +26,13 @@ Ext.define('RBM.view.FRM_mcategory',{
         },{
             name: 'd_name',
             flex: 1,
-            fieldLabel: 'Category Name ',
+            fieldLabel: 'UOM Name ',
             labelAlign: 'top',
             allowBlank: false
         },{
             name: 'd_description',
             flex: 1,
-            fieldLabel: 'Category Desc ',
+            fieldLabel: 'UOM Desc ',
             labelAlign: 'top',
             allowBlank: false
         }]
@@ -44,7 +44,7 @@ Ext.define('RBM.view.FRM_mcategory',{
         text    : 'Reset',
         handler : function () { 
             var frm = this.up('panel');
-            frm.down('form').getForm().reset(); 
+            frm.down('form').getForm().reset();
             frm.setAction('add');
         }
     }]  

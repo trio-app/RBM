@@ -8,7 +8,7 @@ if ( ! function_exists('app_ver'))
         // major.minor[.build[.revision]]
         // or
         // major.minor[.maintenance[.build]]
-        return "BETA Version 0.9.0.1";
+        return "BETA Version <b>0.9.0.1</b>";
     }   
 }
 

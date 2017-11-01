@@ -31,4 +31,21 @@ class R_mgroup extends CI_Model {
             return json_encode($data);   
 
         }
+        
+        function cbolist(){
+            $this->load->database();
+            $this->db->select(' SQL_CALC_FOUND_ROWS m_data.*
+                            ',FALSE);
+            $this->db->from('m_data');
+            $this->db->where('m_data.d_id <>', 0);
+            $this->db->like('m_data.m_name','Group');
+            $this->db->order_by("m_data.d_id","DESC");
+            $query = $this->db->get();
+                            //return $db->last_query();
+            $rows = $query->result_array();
+            
+            return json_encode($rows);
+            
+        }        
+        
 }

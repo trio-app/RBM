@@ -13,11 +13,11 @@
                renderTo: 'ID_mcategory',
                defaultType: 'container',
                items: [{
-                    columnWidth: 1/3,
+                    columnWidth: 1/4,
                     padding: '0 5 5 5',
                     items:[{xtype: 'FRM_mcategory'}]
                     },{
-                    columnWidth: 2/3,
+                    columnWidth: 3/4,
                     padding: '0 0 5 5',
                     items:[{xtype: 'GRID_mcategory'}]
                     }]

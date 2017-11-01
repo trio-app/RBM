@@ -1,9 +1,9 @@
-Ext.define('RBM.view.GRID_mgroup',{
+Ext.define('RBM.view.GRID_mmaterial',{
     extend: 'Ext.grid.Panel',
-    alias: 'widget.GRID_mgroup',
-    store: 'ST_mgroup',
+    alias: 'widget.GRID_mmaterial',
+    store: 'ST_mmaterial',
     margin: '10 0',
-    height: 400,
+    height: 500,
     frame: true,
     initComponent: function(){
         this.tbar = [
@@ -17,11 +17,17 @@ Ext.define('RBM.view.GRID_mgroup',{
         ];
         this.columns = [
             { xtype: 'rownumberer' },
-            { header: 'Group Name', dataIndex: 'd_name', flex: 1 },
-            { header: 'Description', dataIndex: 'd_description', flex: 1 },          
+            { header: 'SAP Code', dataIndex: 'mat_sapcode', locked: true},
+            { header: 'SAP Name', dataIndex: 'mat_sapname', width: 200, locked: true},
+            { header: 'Material SKU', dataIndex: 'mat_sku'},
+            { header: 'Material Name', dataIndex: 'mat_skuname'},
+            { header: 'Material Group', dataIndex: 'mat_group'},
+            { header: 'Material Category', dataIndex: 'mat_category'},
+            { header: 'Material UOM', dataIndex: 'mat_uom'},
+            { header: 'Material UPP', dataIndex: 'mat_upp'}
         ];
       this.bbar = Ext.create('Ext.PagingToolbar', {
-        store: 'ST_mgroup',
+        store: 'ST_mmaterial',
         displayInfo: true,
         displayMsg: 'Total Data {0} - {1} of {2}',
         emptyMsg: "No Data Display"
@@ -46,7 +52,7 @@ Ext.define('RBM.view.GRID_mgroup',{
                 contextMenu.showAt(e.getXY());
                 return false;
             }
-        });            
+        });        
         this.callParent(arguments);
     },
     getSelected: function () {

@@ -39,5 +39,11 @@ class Mgroup extends MX_Controller{
         $this->load->model('U_mgroup');
         $this->U_mgroup->updateDT(json_decode($JSONdata,true));  
     }
+        
+    public function cbolist(){
+        header('Content-type: application/json');
+        $this->load->model('R_mgroup');
+        print_r($this->R_mgroup->cbolist());  
+    }
 }
 

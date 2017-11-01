@@ -27,11 +27,13 @@ Ext.define('RBM.view.FRM_mgroup',{
             name: 'd_name',
             flex: 1,
             fieldLabel: 'Group Name',
+            labelAlign: 'top',
             allowBlank: false
         },{
             name: 'd_description',
             flex: 1,
             fieldLabel: 'Group Desc',
+            labelAlign: 'top',
             allowBlank: false
         }]
 }],
@@ -42,10 +44,8 @@ Ext.define('RBM.view.FRM_mgroup',{
         text    : 'Reset',
         handler : function () { 
             var frm = this.up('panel');
-            frm.down('form').getForm().reset();
-            //this.up('panel').down('form').getForm().reset();  
+            frm.down('form').getForm().reset(); 
             frm.setAction('add');
-            console.log(frm.action);
         }
     }]  
 });
