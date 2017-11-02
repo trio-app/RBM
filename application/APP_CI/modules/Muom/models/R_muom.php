@@ -12,8 +12,8 @@ class R_muom extends CI_Model {
             $this->db->from('m_data');
             $this->db->where("m_data.d_id <>", 0);
             $this->db->like('m_data.m_name','UOM');
-            $this->db->like('m_data.d_name',$dtfilter['value']);
-            $this->db->like('m_data.d_description',$dtfilter['value']);   
+            $this->db->like('m_data.d_name',$dtfilter[0]['value']);
+            $this->db->like('m_data.d_description',$dtfilter[0]['value']);   
             $this->db->limit($limit,$start);
             $this->db->order_by("m_data.d_id","DESC");
             $query = $this->db->get();

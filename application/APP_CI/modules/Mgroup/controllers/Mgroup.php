@@ -18,7 +18,6 @@ class Mgroup extends MX_Controller{
         $limit = $this->input->post('limit');
         $filter = $this->input->post('filter');
         header('Content-type: application/json');
-        echo $start;
         print_r( $this->R_mgroup->load_default($start,$limit,$filter));
     }   
     

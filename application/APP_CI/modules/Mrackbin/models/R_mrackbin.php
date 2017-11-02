@@ -11,8 +11,8 @@ class R_mrackbin extends CI_Model {
                             ',FALSE);
             $this->db->from('m_rackbin');
             $this->db->where("m_rackbin.rack_id <>", 0);
-            $this->db->like('m_rackbin.rack_name',$dtfilter['value']);
-            $this->db->like('m_rackbin.rack_description',$dtfilter['value']);   
+            $this->db->like('m_rackbin.rack_name',$dtfilter[0]['value']);
+            $this->db->like('m_rackbin.rack_description',$dtfilter[0]['value']);   
             $this->db->limit($limit,$start);
             $this->db->order_by("m_rackbin.rack_id","DESC");
             $query = $this->db->get();
