@@ -68,6 +68,7 @@ Ext.define('RBM.view.FRM_mmaterial',{
                     fields: ['d_name'],
                     proxy: {
                         type: 'ajax',
+                        actionMethods: 'POST',
                         url: base_url + 'Mgroup/cbolist',
                         reader: {
                             type: 'json'
@@ -104,6 +105,7 @@ Ext.define('RBM.view.FRM_mmaterial',{
                     fields: ['d_name'],
                     proxy: {
                         type: 'ajax',
+                        actionMethods: 'POST',
                         url: base_url + 'Mcategory/cbolist',
                         reader: {
                             type: 'json'
@@ -140,6 +142,7 @@ Ext.define('RBM.view.FRM_mmaterial',{
                     fields: ['d_name'],
                     proxy: {
                         type: 'ajax',
+                        actionMethods: 'POST',
                         url: base_url + 'Muom/cbolist',
                         reader: {
                             type: 'json'

@@ -10,7 +10,7 @@ Ext.define('RBM.store.ST_mgroup',{
     pageSize: 20,
     proxy: {
         type: 'ajax',
-        actionMethod: 'POST',
+        actionMethods: 'POST',
         api: {
             read: base_url + 'Mgroup/read'
         },
