@@ -20,7 +20,7 @@
     <script type="text/javascript">
         // function run when ready
         Ext.onReady(function(){
-            //container
+            // container
             
         var dttransaction = Ext.create('Ext.data.TreeStore', {
             root: {
@@ -49,7 +49,7 @@
                             var newtab = Ext.getCmp('contentTAB').add({
                                                         title: record.data.text,
                                                         id : record.data.id,
-                                                        //closable: true,
+                                                        // closable: true,
                                                         closeAction: 'hide',
                                                         autoDestroy:false,
                                                         maximizable:true,
@@ -63,7 +63,7 @@
                                                         });
                             Ext.getCmp('contentTAB').doLayout();
                             Ext.getCmp('contentTAB').setActiveTab(newtab);
-                                //console.log("buat baru" + record.internalId);
+                                // console.log("buat baru" + record.internalId);
                     }else{
                         Ext.getCmp('contentTAB').doLayout();
                         Ext.getCmp('contentTAB').setActiveTab(thisTab);
@@ -80,13 +80,15 @@
                     region: 'north',
                     margin: '5',
                     items: [
-                        //top toolbar
+                        // top toolbar
                         Ext.create('Ext.toolbar.Toolbar',{
                             items: [{
                                 xtype: 'box',
                                 html: '<span style="font-size:14pt;"><?php echo app_title(); ?></span> <?php echo app_ver(); ?>',
                                 padding: '0 10'
                             },'->',{
+                                
+                            },{
                                 xtype: 'button',
                                 scale: 'large',
                                 text: '&nbsp;',
@@ -175,10 +177,10 @@
                                 // server name
                                 {xtype: 'displayfield', fieldLabel: 'Server Name ', value: '<span style="color:green; "><?php echo $this->db->hostname; ?></span>',margins: '0 5'},
                                 '-',
-                                //server access
+                                // server access
                                 {xtype: 'displayfield', fieldLabel: 'Server Access ', value: '<span style="color:green; "><?php echo $this->db->database; ?></span>',margins: '0 5'},
                                 '-','->',
-                                //Refresh Button
+                                // Refresh Button
                                 {
                                     text: 'Reload App',
                                     icon: base_url + 'system/img/refresh.ico',
@@ -206,6 +208,12 @@
             function sysLogout(){
                 Ext.MessageBox.confirm('Confirmation', 'System Logout. Are you sure?', redirect);
             };
+
+            function redirect(btn){
+                if(btn == "yes"){
+                     window.location.assign(base_url + 'Login/Signout');
+                }
+            }; 
             
             function refresh(){
                 Ext.Msg.confirm('Reload Application', 'Are you sure?', function (button) {
@@ -213,14 +221,7 @@
                         location.reload()
                     }
                 }, this);                
-            };
-
-            function redirect(btn){
-                console.log(btn);
-                if(btn == "yes"){
-                     window.location.assign(base_url + 'Login/Signout');
-                }
-            };            
+            };           
         });
         
     </script>

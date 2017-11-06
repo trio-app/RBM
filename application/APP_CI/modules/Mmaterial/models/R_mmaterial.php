@@ -14,9 +14,9 @@ class R_mmaterial extends CI_Model {
             $this->db->from('m_material');
             $this->db->where('m_material.mat_id <>', 0); 
             $this->db->like('m_material.mat_sapcode', $dtfilter[0]['value']);
-            $this->db->like('m_material.mat_sapname', $dtfilter[0]['value']);
-            $this->db->like('m_material.mat_sku', $dtfilter[0]['value']);
-            $this->db->like('m_material.mat_skuname', $dtfilter[0]['value']);
+            $this->db->or_like('m_material.mat_sapname', $dtfilter[0]['value']);
+            $this->db->or_like('m_material.mat_sku', $dtfilter[0]['value']);
+            $this->db->or_like('m_material.mat_skuname', $dtfilter[0]['value']);
             $this->db->limit($limit,$start);
             $this->db->order_by("m_material.mat_id","DESC");
             $query = $this->db->get();
