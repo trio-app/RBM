@@ -14,7 +14,7 @@
                defaultType: 'container',
                items: [{
                     columnWidth: 1/1,
-                    padding: '0 5 5 5',
+                    padding: '5',
                     items:[{xtype: 'TAB_tinbound'}]
                     }]
                 

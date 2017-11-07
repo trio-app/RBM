@@ -27,6 +27,7 @@ Ext.define('RBM.view.FRM_tinbound',{
             fieldLabel: 'Inbound Date ',
             allowBlank: false,
             minValue: Ext.Date.add(new Date(), Ext.Date.DAY, -3),
+            value: Ext.Date.add(new Date()),
             editable: false,
             format: 'd-m-Y'
         },{

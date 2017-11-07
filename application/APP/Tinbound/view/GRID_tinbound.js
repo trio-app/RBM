@@ -31,9 +31,10 @@
                         },                        
                         initComponent: function(){
                             this.tbar= [{
-                                text: 'Add Material',
+                                scale: 'large',
+                                text: '<h2 style="padding: 0; margin: 0;">Add Material</h2>',
                                 action: 'addmaterial',
-                                icon: base_url + 'system/images/icons/drop-add.gif'
+                                icon: base_url + 'system/img/add.ico'
                             }];
                             this.columns= [
                                 {xtype: 'rownumberer'},
