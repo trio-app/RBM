@@ -1,7 +1,7 @@
-                    Ext.define('RBM.view.GRID_tinbound',{
+                    Ext.define('RBM.view.GRID_listopname',{
                         extend: 'Ext.grid.Panel',
-                        alias: 'widget.GRID_tinbound',
-                        id: 'GRID_tinbound',
+                        alias: 'widget.GRID_listopname',
+                        id: 'GRID_listopname',
                         height: 250,
                         border: 0,
                         plugins: [
@@ -37,16 +37,9 @@
                             }];
                             this.columns= [
                                 {xtype: 'rownumberer'},
-                                {header: 'Code', dataIndex: 'mat_sapcode', sortable: false},
+                                {header: 'Matrial Code', dataIndex: 'mat_sapcode', sortable: false},
                                 {header: 'Material Name', dataIndex: 'mat_sapname', flex: 1, sortable: false},
-                                {header: 'UOM', dataIndex: 'mat_uom', sortable: false},
-                                {header: 'UPP', dataIndex: 'mat_upp', xtype: 'numbercolumn', sortable: false,
-                                    editor: {
-                                        xtype: 'numberfield',
-                                        minValue: 0,
-                                        allowBlank: false
-                                    }
-                                },
+                                {header: 'Unit', dataIndex: 'mat_uom', sortable: false},
                                 {header: 'QTY', dataIndex: 'mat_stock', xtype: 'numbercolumn', sortable: false,
                                     editor: {
                                         xtype: 'numberfield',
@@ -54,13 +47,9 @@
                                         allowBlank: false
                                     }                                
                                 },
-                                {header: 'Barcode', dataIndex: 'mat_barcode', xtype: 'numbercolumn', sortable: false,
-                                    editor: {
-                                        xtype: 'numberfield',
-                                        minValue: 0,
-                                        allowBlank: false
-                                    }                                
-                                },
+                                {header: 'Qty Barcode(system)',dataIndex: 'matbarcode', flex: 1},
+                                {header: 'QTY (Scan)',dataIndex: '', flex: 1},
+                                {header: 'Qty Barcode (Scan)',dataIndex: '', flex: 1}
                             ];    
                             this.callParent(arguments);
                         },

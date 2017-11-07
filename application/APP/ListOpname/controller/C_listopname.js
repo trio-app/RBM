@@ -1,11 +1,11 @@
-Ext.define('RBM.controller.C_tinbound',{
+Ext.define('RBM.controller.C_listopname',{
     extend: 'Ext.app.Controller',
-    views: ['TAB_tinbound', 'FRM_tinbound', 'GRID_tinbound'],
-    //stores: ['ST_tinbound'],
+    views: ['GRID_listopname'],
+    //stores: ['ST_listopname'],
     /* refs: [{
-        ref: 'FRM_tinbound',
-        xtype: 'FRM_tinbound',
-        selector: 'FRM_tinbound',
+        ref: 'FRM_listopname',
+        xtype: 'FRM_listopname',
+        selector: 'FRM_listopname',
         autoCreate: true
     }], */    
     init: function(){
