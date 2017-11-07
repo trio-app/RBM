@@ -1,6 +1,6 @@
 Ext.define('RBM.controller.C_tinbound',{
     extend: 'Ext.app.Controller',
-    views: ['TAB_tinbound', 'FRM_tinbound', 'GRID_tinbound'],
+    views: ['TAB_tinbound', 'FRM_tinbound', 'GRID_tinbound', 'Mmaterial.view.GRID_mmaterial'],
     //stores: ['ST_tinbound'],
     /* refs: [{
         ref: 'FRM_tinbound',
