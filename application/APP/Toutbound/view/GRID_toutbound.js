@@ -1,7 +1,7 @@
-                    Ext.define('RBM.view.GRID_tinbound',{
+                    Ext.define('RBM.view.GRID_toutbound',{
                         extend: 'Ext.grid.Panel',
-                        alias: 'widget.GRID_tinbound',
-                        id: 'GRID_tinbound',
+                        alias: 'widget.GRID_toutbound',
+                        id: 'GRID_toutbound',
                         height: 250,
                         border: 0,
                         plugins: [
@@ -31,10 +31,9 @@
                         },                        
                         initComponent: function(){
                             this.tbar= [{
-                                scale: 'large',
-                                text: '<h2 style="padding: 0; margin: 0;">Add Material</h2>',
+                                text: 'Add Material',
                                 action: 'addmaterial',
-                                icon: base_url + 'system/img/add.ico'
+                                icon: base_url + 'system/images/icons/drop-add.gif'
                             }];
                             this.columns= [
                                 {xtype: 'rownumberer'},

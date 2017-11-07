@@ -3,19 +3,19 @@
     //Ext.Loader.setConfig({  enabled: true });
     Ext.application({
         name: 'RBM',
-        appFolder: 'application/APP/Tinbound',
-        controllers: ['C_tinbound'],
+        appFolder: 'application/APP/Toutbound',
+        controllers: ['C_toutbound'],
         launch: function(){
             Ext.create('Ext.container.Container', {
                layout: 'column',
                margin: '5',
                autoScroll: true,
-               renderTo: 'ID_tinbound',
+               renderTo: 'ID_toutbound',
                defaultType: 'container',
                items: [{
                     columnWidth: 1/1,
-                    padding: '5',
-                    items:[{xtype: 'TAB_tinbound'}]
+                    padding: '0 5 5 5',
+                    items:[{xtype: 'TAB_toutbound'}]
                     }]
                 
             });
@@ -27,4 +27,4 @@
 
     
 </script>
-<div id="ID_tinbound"> </div>
+<div id="ID_toutbound"> </div>

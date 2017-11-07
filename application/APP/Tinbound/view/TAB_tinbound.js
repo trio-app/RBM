@@ -30,6 +30,44 @@ Ext.define('RBM.view.TAB_tinbound',{
             xtype: 'GRID_tinbound'
         }]
     }, {
-        title: 'Cancel Inbound'
+        title: 'Cancel Inbound',
+        layout: 'anchor',
+        items: [{
+                border: 0,
+                layout: 'anchor',
+                items: [{
+                        defaults: {
+                            padding: '0 10'
+                        },
+                        layout: 'hbox',
+                        border: 0,
+                        flex: 1,
+                        items: [{
+                                flex: 2,
+                                border: 0,
+                                items: [{
+                                    xtype: 'box',
+                                    html: '<p>Pencarian Inbound dengan Status Inbound belum <b>Complete</b> berdasarkan tanggal Transaksi'
+                                },{
+                                    labelWidth: 200,
+                                    width: 500,
+                                    xtype: 'datefield',
+                                    fieldLabel: 'Pilih tanggal Proses Inbound ',
+                                    minValue: Ext.Date.add(new Date(), Ext.Date.DAY, -3),
+                                    value: Ext.Date.add(new Date()),
+                                    format: 'd-m-Y'
+                                }]
+                        },{
+                            margin: '15',
+                            xtype: 'button',
+                            text: 'Cancel 1 Document',
+                            scale: 'large',
+                            icon: base_url + 'system/img/delete.ico'
+                        }]
+                },{
+                    xtype: 'box',
+                    html: 'lorem'
+                }]
+        }]
     }]
 })

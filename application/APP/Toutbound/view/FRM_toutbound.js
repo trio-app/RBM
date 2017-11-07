@@ -1,6 +1,6 @@
-Ext.define('RBM.view.FRM_tinbound',{
+Ext.define('RBM.view.FRM_toutbound',{
     extend: 'Ext.form.Panel',
-    alias: 'widget.FRM_tinbound',
+    alias: 'widget.FRM_toutbound',
     frame: false,
     border: 0,
     config: {
@@ -24,10 +24,9 @@ Ext.define('RBM.view.FRM_tinbound',{
             xtype: 'datefield',
             name: 'd_name',
             flex: 1,
-            fieldLabel: 'Inbound Date ',
+            fieldLabel: 'Outbound Date ',
             allowBlank: false,
             minValue: Ext.Date.add(new Date(), Ext.Date.DAY, -3),
-            value: Ext.Date.add(new Date()),
             editable: false,
             format: 'd-m-Y'
         },{
@@ -36,20 +35,6 @@ Ext.define('RBM.view.FRM_tinbound',{
             fieldLabel: 'PO / Document Number ',
             allowBlank: false,
             minLength: 3,           
-        },{
-            xtype: 'combo',
-            fieldLabel: 'Inbound Type',
-            flex: 1,
-            allowBlank: false,
-            store: Ext.create('Ext.data.Store', {
-                fields: ['typeid', 'typename'],
-                data : [
-                    {typeid:'1', typename:'RSA'},
-                    {typeid:'0', typename:'SUPPLIER'}
-                ]
-            }),
-            displayField: 'typename',
-            valueField : 'typeid'         
         },{
             xtype: 'textarea',
             flex: 1,
