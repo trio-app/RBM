@@ -1,9 +1,9 @@
-                    Ext.define('RBM.view.GRID_listopname',{
+                    Ext.define('RBM.ListOpname.view.GRID_listopname',{
                         extend: 'Ext.grid.Panel',
                         alias: 'widget.GRID_listopname',
                         id: 'GRID_listopname',
                         height: 250,
-                        border: 0,
+                        border: 2,
                        /* plugins: [
                             Ext.create('Ext.grid.plugin.RowEditing', {
                                     clicksToMoveEditor: 1,
@@ -30,11 +30,9 @@
                             }
                         }, */                       
                         initComponent: function(){
-                            this.tbar= [{
-                                text: 'Add Material',
-                                action: 'addmaterial',
-                                icon: base_url + 'system/images/icons/drop-add.gif'
-                            }];
+                            /*this.tbar= [{
+                                
+                            }];*/
                             this.columns= [
                                 {xtype: 'rownumberer'},
                                 {header: 'Matrial Code', dataIndex: 'mat_sapcode', sortable: false},
@@ -50,8 +48,14 @@
                                 {header: 'Qty Barcode(system)',dataIndex: 'matbarcode', flex: 1},
                                 {header: 'QTY (Scan)',dataIndex: '', flex: 1},
                                 {header: 'Qty Barcode (Scan)',dataIndex: '', flex: 1}
-                            ];    
-                            this.callParent(arguments);
+                            ]; 
+                            this.bbar = Ext.create('Ext.PagingToolbar', {
+                            store: '',
+                            displayInfo: true,
+                            displayMsg: 'Total Data {0} - {1} of {2}',
+                            emptyMsg: "No Data Display"
+                            });
+                         this.callParent(arguments);
                         },
                         getSelected: function () {
                              var sm = this.getSelectionModel();

@@ -1,17 +1,17 @@
-Ext.define('RBM.controller.C_listopname',{
+Ext.define('RBM.ListOpname.controller.C_listopname',{
     extend: 'Ext.app.Controller',
-    views: ['GRID_listopname'],
+    views: ['RBM.ListOpname.view.GRID_listopname'],
     //stores: ['ST_listopname'],
-    /* refs: [{
-        ref: 'FRM_listopname',
-        xtype: 'FRM_listopname',
-        selector: 'FRM_listopname',
+     refs: [{
+        ref: 'GRID_listopname',
+        xtype: 'GRID_listopname',
+        selector: 'GRID_listopname',
         autoCreate: true
-    }], */    
+    }],     
     init: function(){
         this.control({
 
         });
-    },
+    }
     
 });
