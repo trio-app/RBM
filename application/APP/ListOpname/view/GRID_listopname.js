@@ -63,7 +63,7 @@
                             emptyMsg: "No Data Display"
                             });
                          this.callParent(arguments);
-                        },
+                        }/*,
                         getSelected: function () {
                              var sm = this.getSelectionModel();
                              var rs = sm.getSelection();
@@ -71,5 +71,5 @@
                                  return rs[0];
                              }
                              return null;
-                         }                        
-                    })
+                         } */                       
+                    });
