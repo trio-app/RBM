@@ -4,7 +4,7 @@
                         id: 'GRID_listopname',
                         height: 250,
                         border: 0,
-                        plugins: [
+                       /* plugins: [
                             Ext.create('Ext.grid.plugin.RowEditing', {
                                     clicksToMoveEditor: 1,
                                     autoCancel: false,
@@ -28,7 +28,7 @@
                                 }
 
                             }
-                        },                        
+                        }, */                       
                         initComponent: function(){
                             this.tbar= [{
                                 text: 'Add Material',
