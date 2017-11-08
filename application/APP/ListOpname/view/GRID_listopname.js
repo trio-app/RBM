@@ -2,7 +2,8 @@
                         extend: 'Ext.grid.Panel',
                         alias: 'widget.GRID_listopname',
                         id: 'GRID_listopname',
-                        height: 250,
+                        height: 500,
+                        frame:true,
                         border: 2,
                        /* plugins: [
                             Ext.create('Ext.grid.plugin.RowEditing', {
@@ -30,15 +31,21 @@
                             }
                         }, */                       
                         initComponent: function(){
-                            /*this.tbar= [{
-                                
-                            }];*/
+                            this.tbar= [
+                                '->',
+                                    {
+                                        xtype: 'textfield',
+                                        itemId:'searchData',
+                                        emptyText: 'Search Data',
+                                        fieldStyle: 'text-align: left;align:right;'
+                                    }    
+                            ];
                             this.columns= [
                                 {xtype: 'rownumberer'},
                                 {header: 'Matrial Code', dataIndex: 'mat_sapcode', sortable: false},
                                 {header: 'Material Name', dataIndex: 'mat_sapname', flex: 1, sortable: false},
                                 {header: 'Unit', dataIndex: 'mat_uom', sortable: false},
-                                {header: 'QTY', dataIndex: 'mat_stock', xtype: 'numbercolumn', sortable: false,
+                                {header: 'QTY', dataIndex: 'matqtytotal', xtype: 'numbercolumn', sortable: false,
                                     editor: {
                                         xtype: 'numberfield',
                                         minValue: 0,

@@ -14,7 +14,6 @@
                defaultType: 'container',
                items: [{
                     columnWidth: 1/1,
-                    border:true,
                     padding: '5',
                     items:[{xtype: 'GRID_listopname'}]
                     }]
