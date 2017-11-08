@@ -1,7 +1,12 @@
-    Ext.define('RBM.controller.C_mcategory',{
+    Ext.define('RBM.Mcategory.controller.C_mcategory',{
         extend: 'Ext.app.Controller',
-        views: ['GRID_mcategory', 'FRM_mcategory'],
-        stores: ['ST_mcategory'],
+        views: [
+            'RBM.Mcategory.view.GRID_mcategory',
+            'RBM.Mcategory.view.FRM_mcategory'
+        ],
+        stores: [
+            'RBM.Mcategory.store.ST_mcategory'
+        ],
         refs: [{
             ref: 'FRM_mcategory',
             xtype: 'FRM_mcategory',
@@ -23,7 +28,7 @@
             });
         },
         searchData:function (f,e) {
-            var store = this.getST_mcategoryStore();//Ext.getStore('STassetlocation');
+            var store = Ext.getStore('RBM.Mcategory.store.ST_mcategory');//this.getST_mcategoryStore();//Ext.getStore('STassetlocation');
             if (e.getKey() == e.ENTER) {
                 store.remoteFilter = false;
                 store.clearFilter();
@@ -52,7 +57,7 @@
         },
         doProsesCRUD : function (inAction,record){
             var win = this.getFRM_mcategory();
-            var store = this.getST_mcategoryStore();//Ext.getStore('ScontactStore');
+            var store = Ext.getStore('RBM.Mcategory.store.ST_mcategory');//this.getST_mcategoryStore();//Ext.getStore('ScontactStore');
             Ext.Ajax.request({
                         url: base_url + 'Mcategory/' +  inAction,
                         method: 'POST',
@@ -86,13 +91,13 @@
         },                        
         doSaveform: function(){
                 var win = this.getFRM_mcategory();
-                var store = this.getST_mcategoryStore();
+                var store = Ext.getStore('RBM.Mcategory.store.ST_mcategory');//this.getST_mcategoryStore();
                 var form = win.down('form');
                 //var values = form.getValues();
                 var values = form.getValues();
                 var record = form.getRecord();
                 var action = win.getAction();
-                var recValue = Ext.create('RBM.model.M_mcategory', values);
+                var recValue = Ext.create('RBM.Mcategory.model.M_mcategory', values);
                 console.log(action);
 
                 if(action == 'edit'){

@@ -1,10 +1,10 @@
-Ext.define('RBM.model.M_mgroup',{
+Ext.define('RBM.Mgroup.model.M_mgroup',{
     extend: 'Ext.data.Model',
     fields: ['d_id', 'm_name', 'd_name', 'd_description']
 });
-Ext.define('RBM.store.ST_mgroup',{
+Ext.define('RBM.Mgroup.store.ST_mgroup',{
     extend: 'Ext.data.Store',
-    model: 'RBM.model.M_mgroup',
+    model: 'RBM.Mgroup.model.M_mgroup',
     autoLoad:true,
     autoSync: true,
     pageSize: 20,

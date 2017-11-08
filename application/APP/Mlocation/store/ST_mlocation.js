@@ -1,10 +1,10 @@
-Ext.define('RBM.model.M_mlocation',{
+Ext.define('RBM.Mlocation.model.M_mlocation',{
     extend: 'Ext.data.Model',
     fields: ['d_id', 'm_name', 'd_name', 'd_description']
 });
-Ext.define('RBM.store.ST_mlocation',{
+Ext.define('RBM.Mlocation.store.ST_mlocation',{
     extend: 'Ext.data.Store',
-    model: 'RBM.model.M_mlocation',
+    model: 'RBM.Mlocation.model.M_mlocation',
     autoLoad:true,
     autoSync: true,
     pageSize: 20,

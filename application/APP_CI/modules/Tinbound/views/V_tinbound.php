@@ -3,8 +3,8 @@
     //Ext.Loader.setConfig({  enabled: true });
     Ext.application({
         name: 'RBM',
-        appFolder: 'application/APP/Tinbound',
-        controllers: ['C_tinbound'],
+        appFolder: 'application/APP',
+        controllers: ['RBM.Tinbound.controller.C_tinbound'],
         launch: function(){
             Ext.create('Ext.container.Container', {
                layout: 'column',

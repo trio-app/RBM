@@ -1,4 +1,4 @@
-Ext.define('RBM.view.FRM_mlocation',{
+Ext.define('RBM.Mlocation.view.FRM_mlocation',{
    extend: 'Ext.form.Panel',
    alias: 'widget.FRM_mlocation',
    frame: false,

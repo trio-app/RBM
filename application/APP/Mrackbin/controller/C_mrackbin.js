@@ -1,7 +1,12 @@
-    Ext.define('RBM.controller.C_mrackbin',{
+    Ext.define('RBM.Mrackbin.controller.C_mrackbin',{
         extend: 'Ext.app.Controller',
-        views: ['GRID_mrackbin', 'FRM_mrackbin'],
-        stores: ['ST_mrackbin'],
+        views: [
+            'RBM.Mrackbin.view.GRID_mrackbin',
+            'RBM.Mrackbin.view.FRM_mrackbin'
+        ],
+        stores: [
+            'RBM.Mrackbin.store.ST_mrackbin'
+        ],
         refs: [{
             ref: 'FRM_mrackbin',
             xtype: 'FRM_mrackbin',
@@ -23,7 +28,7 @@
             });
         },
         searchData:function (f,e) {
-            var store = this.getST_mrackbinStore();//Ext.getStore('STassetrackbin');
+            var store = Ext.getStore('RBM.Mrackbin.store.ST_mrackbin');//this.getST_mrackbinStore();//Ext.getStore('STassetrackbin');
             if (e.getKey() == e.ENTER) {
                 store.remoteFilter = false;
                 store.clearFilter();
@@ -52,7 +57,7 @@
         },
         doProsesCRUD : function (inAction,record){
             var win = this.getFRM_mrackbin();
-            var store = this.getST_mrackbinStore();//Ext.getStore('ScontactStore');
+            var store = Ext.getStore('RBM.Mrackbin.store.ST_mrackbin');//this.getST_mrackbinStore();//Ext.getStore('ScontactStore');
             Ext.Ajax.request({
                         url: base_url + 'Mrackbin/' +  inAction,
                         method: 'POST',
@@ -86,13 +91,13 @@
         },                        
         doSaveform: function(){
                 var win = this.getFRM_mrackbin();
-                var store = this.getST_mrackbinStore();
+                var store = Ext.getStore('RBM.Mrackbin.store.ST_mrackbin');//this.getST_mrackbinStore();
                 var form = win.down('form');
                 //var values = form.getValues();
                 var values = form.getValues();
                 var record = form.getRecord();
                 var action = win.getAction();
-                var recValue = Ext.create('RBM.model.M_mrackbin', values);
+                var recValue = Ext.create('RBM.Mrackbin.model.M_mrackbin', values);
                 console.log(action);
 
                 if(action == 'edit'){

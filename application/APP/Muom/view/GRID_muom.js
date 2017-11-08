@@ -1,7 +1,7 @@
-Ext.define('RBM.view.GRID_muom',{
+Ext.define('RBM.Muom.view.GRID_muom',{
     extend: 'Ext.grid.Panel',
     alias: 'widget.GRID_muom',
-    store: 'ST_muom',
+    store: 'RBM.Muom.store.ST_muom',
     margin: '10 0',
     height: 400,
     frame: true,
@@ -21,7 +21,7 @@ Ext.define('RBM.view.GRID_muom',{
             { header: 'Description', dataIndex: 'd_description', flex: 1 },
         ];
       this.bbar = Ext.create('Ext.PagingToolbar', {
-        store: 'ST_muom',
+        store: 'RBM.Muom.store.ST_muom',
         displayInfo: true,
         displayMsg: 'Total Data {0} - {1} of {2}',
         emptyMsg: "No Data Display"

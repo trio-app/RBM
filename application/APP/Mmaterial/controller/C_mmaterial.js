@@ -1,11 +1,21 @@
-    Ext.define('RBM.controller.C_mmaterial',{
+    Ext.define('RBM.Mmaterial.controller.C_mmaterial',{
         extend: 'Ext.app.Controller',
-        views: ['GRID_mmaterial', 'FRM_mmaterial'],
-        stores: ['ST_mmaterial'],
+        views: [
+            'RBM.Mmaterial.view.GRID_mmaterial',
+            'RBM.Mmaterial.view.FRM_mmaterial'
+        ],
+        stores: [
+            'RBM.Mmaterial.store.ST_mmaterial'
+        ],
         refs: [{
             ref: 'FRM_mmaterial',
             xtype: 'FRM_mmaterial',
             selector: 'FRM_mmaterial',
+            autoCreate: true
+        },{
+            ref: 'GRID_mmaterial',
+            xtype: 'GRID_mmaterial',
+            selector: 'GRID_mmaterial',
             autoCreate: true
         }],
         init: function(){
@@ -23,7 +33,7 @@
             });
         },
         searchData:function (f,e) {
-            var store = this.getST_mmaterialStore();//Ext.getStore('STassetlocation');
+            var store = Ext.getStore('RBM.Mmaterial.store.ST_mmaterial');//this.getST_mmaterialStore();//Ext.getStore('STassetlocation');
             if (e.getKey() == e.ENTER) {
                 store.remoteFilter = false;
                 store.clearFilter();
@@ -52,7 +62,10 @@
         },
         doProsesCRUD : function (inAction,record){
             var win = this.getFRM_mmaterial();
-            var store = this.getST_mmaterialStore();//Ext.getStore('ScontactStore');
+            //var store = this.getStore('RBM.Mmaterial.store.ST_mmaterial');//this.getST_mmaterialStore();//Ext.getStore('ScontactStore');
+            var grid = this.getGRID_mmaterial();
+            var store = grid.getStore();
+            console.log(grid);
             Ext.Ajax.request({
                         url: base_url + 'Mmaterial/' +  inAction,
                         method: 'POST',
@@ -86,13 +99,13 @@
         },                        
         doSaveform: function(){
                 var win = this.getFRM_mmaterial();
-                var store = this.getST_mmaterialStore();
+                var store = Ext.getStore('RBM.Mmaterial.store.ST_mmaterial');//this.getST_mmaterialStore();
                 var form = win.down('form');
                 //var values = form.getValues();
                 var values = form.getValues();
                 var record = form.getRecord();
                 var action = win.getAction();
-                var recValue = Ext.create('RBM.model.M_mmaterial', values);
+                var recValue = Ext.create('RBM.Mmaterial.model.M_mmaterial', values);
                 console.log(action);
 
                 if(action == 'edit'){

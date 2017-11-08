@@ -1,7 +1,12 @@
-    Ext.define('RBM.controller.C_mgroup',{
+    Ext.define('RBM.Mgroup.controller.C_mgroup',{
         extend: 'Ext.app.Controller',
-        views: ['GRID_mgroup', 'FRM_mgroup'],
-        stores: ['ST_mgroup'],
+        views: [
+            'RBM.Mgroup.view.GRID_mgroup',
+            'RBM.Mgroup.view.FRM_mgroup'
+        ],
+        stores: [
+            'RBM.Mgroup.store.ST_mgroup'
+        ],
         refs: [{
             ref: 'FRM_mgroup',
             xtype: 'FRM_mgroup',
@@ -23,7 +28,7 @@
             });
         },
         searchData:function (f,e) {
-            var store = this.getST_mgroupStore();//Ext.getStore('STassetlocation');
+            var store = Ext.getStore('RBM.Mgroup.store.ST_mgroup');//this.getST_mgroupStore();//Ext.getStore('STassetlocation');
             if (e.getKey() == e.ENTER) {
                 store.remoteFilter = false;
                 store.clearFilter();
@@ -52,7 +57,7 @@
         },
         doProsesCRUD : function (inAction,record){
             var win = this.getFRM_mgroup();
-            var store = this.getST_mgroupStore();//Ext.getStore('ScontactStore');
+            var store = Ext.getStore('RBM.Mgroup.store.ST_mgroup');//this.getST_mgroupStore();//Ext.getStore('ScontactStore');
             Ext.Ajax.request({
                         url: base_url + 'Mgroup/' +  inAction,
                         method: 'POST',
@@ -86,13 +91,13 @@
         },                        
         doSaveform: function(){
                 var win = this.getFRM_mgroup();
-                var store = this.getST_mgroupStore();
+                var store = Ext.getStore('RBM.Mgroup.store.ST_mgroup');//this.getST_mgroupStore();
                 var form = win.down('form');
                 //var values = form.getValues();
                 var values = form.getValues();
                 var record = form.getRecord();
                 var action = win.getAction();
-                var recValue = Ext.create('RBM.model.M_mgroup', values);
+                var recValue = Ext.create('RBM.Mgroup.model.M_mgroup', values);
                 console.log(action);
 
                 if(action == 'edit'){

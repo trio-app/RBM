@@ -1,4 +1,4 @@
-Ext.define('RBM.view.FRM_mcategory',{
+Ext.define('RBM.Mcategory.view.FRM_mcategory',{
    extend: 'Ext.form.Panel',
    alias: 'widget.FRM_mcategory',
    frame: false,

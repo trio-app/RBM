@@ -3,8 +3,8 @@
     //Ext.Loader.setConfig({  enabled: true });
     Ext.application({
         name: 'RBM',
-        appFolder: 'application/APP/Mmaterial',
-        controllers: ['C_mmaterial'],
+        appFolder: 'application/APP',
+        controllers: ['RBM.Mmaterial.controller.C_mmaterial'],
         launch: function(){
             Ext.create('Ext.container.Container', {
                layout: 'column',
@@ -19,7 +19,7 @@
                     },{
                     columnWidth: 3/4,
                     padding: '0 0 5 5',
-                    items:[{xtype: 'GRID_mmaterial'}]
+                    items:[{xtype: 'GRID_mmaterial', store: Ext.create('RBM.Mmaterial.store.ST_mmaterial')}]
                     }]
                 
             });

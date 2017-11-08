@@ -1,10 +1,10 @@
-Ext.define('RBM.model.M_muom',{
+Ext.define('RBM.Muom.model.M_muom',{
     extend: 'Ext.data.Model',
     fields: ['d_id', 'm_name', 'd_name', 'd_description']
 });
-Ext.define('RBM.store.ST_muom',{
+Ext.define('RBM.Muom.store.ST_muom',{
     extend: 'Ext.data.Store',
-    model: 'RBM.model.M_muom',
+    model: 'RBM.Muom.model.M_muom',
     autoLoad:true,
     autoSync: true,
     pageSize: 20,

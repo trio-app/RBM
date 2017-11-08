@@ -1,4 +1,4 @@
-Ext.define('RBM.view.FRM_muom',{
+Ext.define('RBM.Muom.view.FRM_muom',{
    extend: 'Ext.form.Panel',
    alias: 'widget.FRM_muom',
    frame: false,

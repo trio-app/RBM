@@ -1,7 +1,12 @@
-    Ext.define('RBM.controller.C_muom',{
+    Ext.define('RBM.Muom.controller.C_muom',{
         extend: 'Ext.app.Controller',
-        views: ['GRID_muom', 'FRM_muom'],
-        stores: ['ST_muom'],
+        views: [
+            'RBM.Muom.view.GRID_muom',
+            'RBM.Muom.view.FRM_muom'
+        ],
+        stores: [
+            'RBM.Muom.store.ST_muom'
+        ],
         refs: [{
             ref: 'FRM_muom',
             xtype: 'FRM_muom',
@@ -23,7 +28,7 @@
             });
         },
         searchData:function (f,e) {
-            var store = this.getST_muomStore();//Ext.getStore('STassetlocation');
+            var store = Ext.getStore('RBM.Muom.store.ST_muom');//this.getST_muomStore();//Ext.getStore('STassetlocation');
             if (e.getKey() == e.ENTER) {
                 store.remoteFilter = false;
                 store.clearFilter();
@@ -52,7 +57,7 @@
         },
         doProsesCRUD : function (inAction,record){
             var win = this.getFRM_muom();
-            var store = this.getST_muomStore();//Ext.getStore('ScontactStore');
+            var store = Ext.getStore('RBM.Muom.store.ST_muom');//this.getST_muomStore();//Ext.getStore('ScontactStore');
             Ext.Ajax.request({
                         url: base_url + 'Muom/' +  inAction,
                         method: 'POST',
@@ -86,13 +91,13 @@
         },                        
         doSaveform: function(){
                 var win = this.getFRM_muom();
-                var store = this.getST_muomStore();
+                var store = Ext.getStore('RBM.Muom.store.ST_muom');//this.getST_muomStore();
                 var form = win.down('form');
                 //var values = form.getValues();
                 var values = form.getValues();
                 var record = form.getRecord();
                 var action = win.getAction();
-                var recValue = Ext.create('RBM.model.M_muom', values);
+                var recValue = Ext.create('RBM.Muom.model.M_muom', values);
                 console.log(action);
 
                 if(action == 'edit'){

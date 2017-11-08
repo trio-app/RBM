@@ -1,7 +1,7 @@
-Ext.define('RBM.view.GRID_mcategory',{
+Ext.define('RBM.Mcategory.view.GRID_mcategory',{
     extend: 'Ext.grid.Panel',
     alias: 'widget.GRID_mcategory',
-    store: 'ST_mcategory',
+    store: 'RBM.Mcategory.store.ST_mcategory',
     margin: '10 0',
     height: 400,
     frame: true,
@@ -21,7 +21,7 @@ Ext.define('RBM.view.GRID_mcategory',{
             { header: 'Description', dataIndex: 'd_description', flex: 1 },
         ];
       this.bbar = Ext.create('Ext.PagingToolbar', {
-        store: 'ST_mcategory',
+        store: 'RBM.Mcategory.store.ST_mcategory',
         displayInfo: true,
         displayMsg: 'Total Data {0} - {1} of {2}',
         emptyMsg: "No Data Display"

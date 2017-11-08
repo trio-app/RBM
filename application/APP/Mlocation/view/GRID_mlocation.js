@@ -1,7 +1,7 @@
-Ext.define('RBM.view.GRID_mlocation',{
+Ext.define('RBM.Mlocation.view.GRID_mlocation',{
     extend: 'Ext.grid.Panel',
     alias: 'widget.GRID_mlocation',
-    store: 'ST_mlocation',
+    store: 'RBM.Mlocation.store.ST_mlocation',
     margin: '10 0',
     height: 400,
     frame: true,
@@ -21,7 +21,7 @@ Ext.define('RBM.view.GRID_mlocation',{
             { header: 'Description', dataIndex: 'd_description', flex: 1 },          
         ];
       this.bbar = Ext.create('Ext.PagingToolbar', {
-        store: 'ST_mlocation',
+        store: 'RBM.Mlocation.store.ST_mlocation',
         displayInfo: true,
         displayMsg: 'Total Data {0} - {1} of {2}',
         emptyMsg: "No Data Display"

@@ -1,4 +1,4 @@
-Ext.define('RBM.view.TAB_tinbound',{
+Ext.define('RBM.Tinbound.view.TAB_tinbound',{
     extend: 'Ext.tab.Panel',
     alias: 'widget.TAB_tinbound',
     frame: true,
@@ -65,8 +65,6 @@ Ext.define('RBM.view.TAB_tinbound',{
                             icon: base_url + 'system/img/delete.ico'
                         }]
                 },{
-                    xtype: 'box',
-                    html: 'lorem'
                 }]
         }]
     }]

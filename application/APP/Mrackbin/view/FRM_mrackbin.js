@@ -1,4 +1,4 @@
-Ext.define('RBM.view.FRM_mrackbin',{
+Ext.define('RBM.Mrackbin.view.FRM_mrackbin',{
    extend: 'Ext.form.Panel',
    alias: 'widget.FRM_mrackbin',
    frame: false,

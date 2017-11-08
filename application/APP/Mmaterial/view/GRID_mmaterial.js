@@ -1,7 +1,7 @@
-Ext.define('RBM.view.GRID_mmaterial',{
+Ext.define('RBM.Mmaterial.view.GRID_mmaterial',{
     extend: 'Ext.grid.Panel',
     alias: 'widget.GRID_mmaterial',
-    store: 'ST_mmaterial',
+    //store: 'RBM.Mmaterial.store.ST_mmaterial',
     margin: '10 0',
     height: 500,
     frame: true,
@@ -27,7 +27,7 @@ Ext.define('RBM.view.GRID_mmaterial',{
             { header: 'Material UPP', dataIndex: 'mat_upp'}
         ];
       this.bbar = Ext.create('Ext.PagingToolbar', {
-        store: 'ST_mmaterial',
+        store: this.store,
         displayInfo: true,
         displayMsg: 'Total Data {0} - {1} of {2}',
         emptyMsg: "No Data Display"
