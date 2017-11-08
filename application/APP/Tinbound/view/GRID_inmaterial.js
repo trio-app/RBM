@@ -8,6 +8,7 @@ Ext.define('RBM.Tinbound.view.GRID_inmaterial',{
    modal: true,
    items: [{
         xtype: 'GRID_mmaterial',
+        alias: 'widget.GRID_mmaterial',
         frame: false,
         padding: 0,
         store: Ext.create('RBM.Mmaterial.store.ST_mmaterial'),
