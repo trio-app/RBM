@@ -1,7 +1,7 @@
-Ext.define('RBM.view.GRID_mgroup',{
+Ext.define('RBM.Mgroup.view.GRID_mgroup',{
     extend: 'Ext.grid.Panel',
     alias: 'widget.GRID_mgroup',
-    store: 'ST_mgroup',
+    store: 'RBM.Mgroup.store.ST_mgroup',
     margin: '10 0',
     height: 400,
     frame: true,
@@ -21,7 +21,7 @@ Ext.define('RBM.view.GRID_mgroup',{
             { header: 'Description', dataIndex: 'd_description', flex: 1 },          
         ];
       this.bbar = Ext.create('Ext.PagingToolbar', {
-        store: 'ST_mgroup',
+        store: 'RBM.Mgroup.store.ST_mgroup',
         displayInfo: true,
         displayMsg: 'Total Data {0} - {1} of {2}',
         emptyMsg: "No Data Display"

@@ -1,10 +1,10 @@
-Ext.define('RBM.model.M_mrackbin',{
+Ext.define('RBM.Mrackbin.model.M_mrackbin',{
     extend: 'Ext.data.Model',
     fields: ['rack_id', 'rack_name', 'location_name', 'rack_description']
 });
-Ext.define('RBM.store.ST_mrackbin',{
+Ext.define('RBM.Mrackbin.store.ST_mrackbin',{
     extend: 'Ext.data.Store',
-    model: 'RBM.model.M_mrackbin',
+    model: 'RBM.Mrackbin.model.M_mrackbin',
     autoLoad:true,
     autoSync: true,
     proxy: {

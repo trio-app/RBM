@@ -1,4 +1,4 @@
-Ext.define('RBM.view.FRM_tinbound',{
+Ext.define('RBM.Tinbound.view.FRM_tinbound',{
     extend: 'Ext.form.Panel',
     alias: 'widget.FRM_tinbound',
     frame: false,

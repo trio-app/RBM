@@ -3,8 +3,8 @@
     //Ext.Loader.setConfig({  enabled: true });
     Ext.application({
         name: 'RBM',
-        appFolder: 'application/APP/Muom',
-        controllers: ['C_muom'],
+        appFolder: 'application/APP',
+        controllers: ['RBM.Muom.controller.C_muom'],
         launch: function(){
             Ext.create('Ext.container.Container', {
                layout: 'column',

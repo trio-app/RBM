@@ -1,7 +1,7 @@
-Ext.define('RBM.view.GRID_mrackbin',{
+Ext.define('RBM.Mrackbin.view.GRID_mrackbin',{
     extend: 'Ext.grid.Panel',
     alias: 'widget.GRID_mrackbin',
-    store: 'ST_mrackbin',
+    store: 'RBM.Mrackbin.store.ST_mrackbin',
     margin: '10 0',
     height: 400,
     frame: true,
@@ -22,7 +22,7 @@ Ext.define('RBM.view.GRID_mrackbin',{
             { header: 'Description', dataIndex: 'rack_description', flex: 1 },          
         ];
       this.bbar = Ext.create('Ext.PagingToolbar', {
-        store: 'ST_mrackbin',
+        store: 'RBM.Mrackbin.store.ST_mrackbin',
         displayInfo: true,
         displayMsg: 'Total Data {0} - {1} of {2}',
         emptyMsg: "No Data Display"

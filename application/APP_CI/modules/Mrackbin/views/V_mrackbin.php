@@ -3,8 +3,8 @@
     //Ext.Loader.setConfig({  enabled: true });
     Ext.application({
         name: 'RBM',
-        appFolder: 'application/APP/Mrackbin',
-        controllers: ['C_mrackbin'],
+        appFolder: 'application/APP',
+        controllers: ['RBM.Mrackbin.controller.C_mrackbin'],
         launch: function(){
             Ext.create('Ext.container.Container', {
                layout: 'column',

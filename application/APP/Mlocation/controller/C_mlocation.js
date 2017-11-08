@@ -1,7 +1,12 @@
-    Ext.define('RBM.controller.C_mlocation',{
+    Ext.define('RBM.Mlocation.controller.C_mlocation',{
         extend: 'Ext.app.Controller',
-        views: ['GRID_mlocation', 'FRM_mlocation'],
-        stores: ['ST_mlocation'],
+        views: [
+            'RBM.Mlocation.view.GRID_mlocation',
+            'RBM.Mlocation.view.FRM_mlocation'
+        ],
+        stores: [
+            'RBM.Mlocation.store.ST_mlocation'
+        ],
         refs: [{
             ref: 'FRM_mlocation',
             xtype: 'FRM_mlocation',
@@ -23,7 +28,7 @@
             });
         },
         searchData:function (f,e) {
-            var store = this.getST_mlocationStore();//Ext.getStore('STassetlocation');
+            var store = Ext.getStore('RBM.Mlocation.store.ST_mlocation');//this.getST_mlocationStore();//Ext.getStore('STassetlocation');
             if (e.getKey() == e.ENTER) {
                 store.remoteFilter = false;
                 store.clearFilter();
@@ -52,7 +57,7 @@
         },
         doProsesCRUD : function (inAction,record){
             var win = this.getFRM_mlocation();
-            var store = this.getST_mlocationStore();//Ext.getStore('ScontactStore');
+            var store = Ext.getStore('RBM.Mlocation.store.ST_mlocation');//this.getST_mlocationStore();//Ext.getStore('ScontactStore');
             Ext.Ajax.request({
                         url: base_url + 'Mlocation/' +  inAction,
                         method: 'POST',
@@ -86,13 +91,13 @@
         },                        
         doSaveform: function(){
                 var win = this.getFRM_mlocation();
-                var store = this.getST_mlocationStore();
+                var store = Ext.getStore('RBM.Mlocation.store.ST_mlocation');//this.getST_mlocationStore();
                 var form = win.down('form');
                 //var values = form.getValues();
                 var values = form.getValues();
                 var record = form.getRecord();
                 var action = win.getAction();
-                var recValue = Ext.create('RBM.model.M_mlocation', values);
+                var recValue = Ext.create('RBM.Mlocation.model.M_mlocation', values);
                 console.log(action);
 
                 if(action == 'edit'){

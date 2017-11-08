@@ -3,8 +3,8 @@
     //Ext.Loader.setConfig({  enabled: true });
     Ext.application({
         name: 'RBM',
-        appFolder: 'application/APP/Mlocation',
-        controllers: ['C_mlocation'],
+        appFolder: 'application/APP',
+        controllers: ['RBM.Mlocation.controller.C_mlocation'],
         launch: function(){
             Ext.create('Ext.container.Container', {
                layout: 'column',

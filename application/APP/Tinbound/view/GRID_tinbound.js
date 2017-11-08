@@ -1,4 +1,4 @@
-                    Ext.define('RBM.view.GRID_tinbound',{
+                    Ext.define('RBM.Tinbound.view.GRID_tinbound',{
                         extend: 'Ext.grid.Panel',
                         alias: 'widget.GRID_tinbound',
                         id: 'GRID_tinbound',

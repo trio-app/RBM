@@ -1,4 +1,4 @@
-Ext.define('RBM.view.FRM_mmaterial',{
+Ext.define('RBM.Mmaterial.view.FRM_mmaterial',{
    extend: 'Ext.form.Panel',
    alias: 'widget.FRM_mmaterial',
    frame: false,
