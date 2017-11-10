@@ -1,10 +1,11 @@
-                    Ext.define('RBM.view.GRID_listopname',{
+                    Ext.define('RBM.ListOpname.view.GRID_listopname',{
                         extend: 'Ext.grid.Panel',
                         alias: 'widget.GRID_listopname',
                         id: 'GRID_listopname',
-                        height: 250,
-                        border: 0,
-                        plugins: [
+                        height: 500,
+                        frame:true,
+                        border: 2,
+                       /* plugins: [
                             Ext.create('Ext.grid.plugin.RowEditing', {
                                     clicksToMoveEditor: 1,
                                     autoCancel: false,
@@ -28,19 +29,23 @@
                                 }
 
                             }
-                        },                        
+                        }, */                       
                         initComponent: function(){
-                            this.tbar= [{
-                                text: 'Add Material',
-                                action: 'addmaterial',
-                                icon: base_url + 'system/images/icons/drop-add.gif'
-                            }];
+                            this.tbar= [
+                                '->',
+                                    {
+                                        xtype: 'textfield',
+                                        itemId:'searchData',
+                                        emptyText: 'Search Data',
+                                        fieldStyle: 'text-align: left;align:right;'
+                                    }    
+                            ];
                             this.columns= [
                                 {xtype: 'rownumberer'},
                                 {header: 'Matrial Code', dataIndex: 'mat_sapcode', sortable: false},
                                 {header: 'Material Name', dataIndex: 'mat_sapname', flex: 1, sortable: false},
                                 {header: 'Unit', dataIndex: 'mat_uom', sortable: false},
-                                {header: 'QTY', dataIndex: 'mat_stock', xtype: 'numbercolumn', sortable: false,
+                                {header: 'QTY', dataIndex: 'matqtytotal', xtype: 'numbercolumn', sortable: false,
                                     editor: {
                                         xtype: 'numberfield',
                                         minValue: 0,
@@ -50,9 +55,15 @@
                                 {header: 'Qty Barcode(system)',dataIndex: 'matbarcode', flex: 1},
                                 {header: 'QTY (Scan)',dataIndex: '', flex: 1},
                                 {header: 'Qty Barcode (Scan)',dataIndex: '', flex: 1}
-                            ];    
-                            this.callParent(arguments);
-                        },
+                            ]; 
+                            this.bbar = Ext.create('Ext.PagingToolbar', {
+                            store: '',
+                            displayInfo: true,
+                            displayMsg: 'Total Data {0} - {1} of {2}',
+                            emptyMsg: "No Data Display"
+                            });
+                         this.callParent(arguments);
+                        }/*,
                         getSelected: function () {
                              var sm = this.getSelectionModel();
                              var rs = sm.getSelection();
@@ -60,5 +71,5 @@
                                  return rs[0];
                              }
                              return null;
-                         }                        
-                    })
+                         } */                       
+                    });
