@@ -65,7 +65,6 @@
             //var store = this.getStore('RBM.Mmaterial.store.ST_mmaterial');//this.getST_mmaterialStore();//Ext.getStore('ScontactStore');
             var grid = this.getGRID_mmaterial();
             var store = grid.getStore();
-            console.log(grid);
             Ext.Ajax.request({
                         url: base_url + 'Mmaterial/' +  inAction,
                         method: 'POST',
