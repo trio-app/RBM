@@ -20,7 +20,7 @@ Ext.define('RBM.Mgroup.view.GRID_mgroup',{
             { header: 'Group Name', dataIndex: 'd_name', flex: 1 },
             { header: 'Description', dataIndex: 'd_description', flex: 1 },          
         ];
-      this.bbar = Ext.create('Ext.PagingToolbar', {
+        this.bbar = Ext.create('Ext.PagingToolbar', {
         store: 'RBM.Mgroup.store.ST_mgroup',
         displayInfo: true,
         displayMsg: 'Total Data {0} - {1} of {2}',
